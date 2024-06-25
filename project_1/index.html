@@ -19,8 +19,6 @@
       @viewport {
         width: device-width;
       }
-
-
     }
 
     @media screen and (max-width : 414px) {
@@ -31,8 +29,16 @@
             display: block;
 
         }
+    }
 
-    }   
+        .mobile-articles {
+  display:none;
+}
+@media screen and (max-width:780px) {
+  .mobile-articles {
+    display:block;
+  }
+}
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -63,5 +69,14 @@
         </div>
     </form>
     </div>
+    <script>
+  if (window.navigator.userAgent.match(/Android/i)||
+    window.navigator.userAgent.match(/iPhone/i)) {
+   document.getElementsByClassName('mobile-articles')[0].style.display = 'block';
+  }
+  else {
+  document.getElementsByClassName('mobile-articles')[0].style.display = 'none';
+  } 
+    </script>
 </body>
 </html>
